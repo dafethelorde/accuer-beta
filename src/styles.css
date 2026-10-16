@@ -19,6 +19,20 @@
  */
 
 @theme inline {
+  --color-cream: var(--cream);
+  --color-light-cream: var(--light-cream);
+  --color-deep-cream: var(--deep-cream);
+  --color-ink: var(--ink);
+  --color-secondary-ink: var(--secondary-ink);
+  --color-muted-ink: var(--muted-ink);
+  --color-sage: var(--sage);
+  --color-sage-light: var(--sage-light);
+  --color-sage-dark: var(--sage-dark);
+  --color-panel: var(--panel);
+  --color-panel-foreground: var(--panel-foreground);
+  --font-display: "Inter Tight", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,73 +77,91 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --cream: #F4F4E6;
+  --light-cream: #FAFAF1;
+  --deep-cream: #E8E9D6;
+  --ink: #2F3739;
+  --secondary-ink: #3F4A4C;
+  --muted-ink: #6B7776;
+  --sage: color-mix(in oklab, var(--ink) 15%, var(--cream));
+  --sage-light: color-mix(in oklab, var(--ink) 12%, var(--cream));
+  --sage-dark: color-mix(in oklab, var(--ink) 20%, var(--cream));
+  --panel: var(--ink);
+  --panel-raised: var(--secondary-ink);
+  --panel-foreground: var(--cream);
+  --glass: color-mix(in oklab, var(--light-cream) 69%, transparent);
+  --glass-dark: color-mix(in oklab, var(--cream) 8%, transparent);
+  --hairline: color-mix(in oklab, var(--ink) 14%, transparent);
+  --hairline-light: color-mix(in oklab, var(--cream) 22%, transparent);
+  --shadow-soft: 0 20px 66px color-mix(in oklab, var(--ink) 11%, transparent);
+  --shadow-card: 0 24px 74px color-mix(in oklab, var(--ink) 17%, transparent);
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--light-cream);
+  --card-foreground: var(--ink);
+  --popover: var(--light-cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--cream);
+  --secondary: var(--deep-cream);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sage-light);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--sage-dark);
+  --accent-foreground: var(--ink);
+  --destructive: var(--secondary-ink);
+  --destructive-foreground: var(--cream);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--muted-ink);
+  --chart-1: var(--ink);
+  --chart-2: var(--secondary-ink);
+  --chart-3: var(--muted-ink);
+  --chart-4: var(--sage-dark);
+  --chart-5: var(--deep-cream);
+  --sidebar: var(--light-cream);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--deep-cream);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--muted-ink);
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: var(--ink);
+  --foreground: var(--cream);
+  --card: var(--secondary-ink);
+  --card-foreground: var(--cream);
+  --popover: var(--secondary-ink);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--ink);
+  --secondary: var(--secondary-ink);
+  --secondary-foreground: var(--cream);
+  --muted: var(--secondary-ink);
+  --muted-foreground: var(--deep-cream);
+  --accent: var(--secondary-ink);
+  --accent-foreground: var(--cream);
+  --destructive: var(--muted-ink);
+  --destructive-foreground: var(--cream);
+  --border: var(--hairline-light);
+  --input: var(--hairline-light);
+  --ring: var(--deep-cream);
+  --chart-1: var(--cream);
+  --chart-2: var(--deep-cream);
+  --chart-3: var(--muted-ink);
+  --chart-4: var(--sage-light);
+  --chart-5: var(--sage-dark);
+  --sidebar: var(--secondary-ink);
+  --sidebar-foreground: var(--cream);
+  --sidebar-primary: var(--cream);
+  --sidebar-primary-foreground: var(--ink);
+  --sidebar-accent: var(--secondary-ink);
+  --sidebar-accent-foreground: var(--cream);
+  --sidebar-border: var(--hairline-light);
+  --sidebar-ring: var(--deep-cream);
 }
 
 @layer base {
@@ -138,7 +170,671 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    min-width: 320px;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  ::selection {
+    color: var(--cream);
+    background-color: var(--secondary-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--muted-ink);
+    outline-offset: 4px;
+  }
+}
+
+.accuer-page {
+  overflow: clip;
+  background: var(--cream);
+}
+
+.accuer-display {
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.accuer-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+.accuer-container {
+  width: min(100% - 40px, 1140px);
+  margin-inline: auto;
+}
+
+.accuer-nav {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  border-bottom: 1px solid var(--hairline);
+  background: color-mix(in oklab, var(--cream) 93%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.accuer-wordmark {
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: 1.46rem;
+  font-weight: 650;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.accuer-nav-link {
+  color: var(--secondary-ink);
+  font-size: 0.82rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.accuer-nav-link:hover {
+  color: var(--muted-ink);
+}
+
+.accuer-pill-button {
+  min-height: 46px;
+  padding-inline: 23px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--cream);
+  background: var(--ink);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 3px 0 color-mix(in oklab, var(--ink) 18%, transparent);
+  transition: transform 170ms ease, box-shadow 170ms ease, background-color 170ms ease;
+}
+
+.accuer-pill-button:hover:not(:disabled) {
+  background: var(--secondary-ink);
+  transform: translateY(-1px);
+}
+
+.accuer-pill-button:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: none;
+}
+
+.accuer-pill-button:focus-visible,
+.accuer-outline-button:focus-visible {
+  outline: 3px solid var(--muted-ink);
+  outline-offset: 4px;
+}
+
+.accuer-pill-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.accuer-outline-button {
+  min-height: 46px;
+  padding: 0 21px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.accuer-outline-button:hover {
+  background: var(--glass);
+}
+
+.accuer-outline-button:active {
+  transform: scale(0.985);
+}
+
+.accuer-section-label {
+  color: var(--muted-ink);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.67rem;
+  font-weight: 550;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.accuer-section-label--light {
+  color: color-mix(in oklab, var(--cream) 61%, transparent);
+}
+
+.accuer-hero {
+  padding-block: clamp(56px, 9vw, 117px) 78px;
+}
+
+.accuer-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.91fr);
+  align-items: center;
+  gap: clamp(38px, 7vw, 86px);
+}
+
+.accuer-hero-title {
+  max-width: 730px;
+  margin-top: 26px;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: clamp(3.05rem, 7vw, 5.7rem);
+  font-weight: 520;
+  line-height: 0.99;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.accuer-hero-copy {
+  max-width: 485px;
+  margin-top: 24px;
+  color: var(--secondary-ink);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.accuer-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.notched-chip {
+  display: inline-flex;
+  min-height: 31px;
+  align-items: center;
+  padding: 3px 11px 3px 4px;
+  gap: 9px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--sage-light);
+  font-size: 0.7rem;
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.notched-chip__tab {
+  position: relative;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--cream);
+  background: var(--ink);
+}
+
+.notched-chip__tab::after {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cream);
+  content: "";
+}
+
+.notched-chip--dark {
+  border-color: var(--hairline-light);
+  color: var(--cream);
+  background: var(--glass-dark);
+}
+
+.notched-chip--dark .notched-chip__tab {
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.notched-chip--dark .notched-chip__tab::after {
+  background: var(--ink);
+}
+
+.notched-chip--compact {
+  min-height: 28px;
+  gap: 8px;
+  font-size: 0.66rem;
+}
+
+.accuer-hero-art {
+  position: relative;
+  display: flex;
+  min-height: 442px;
+  align-items: center;
+  justify-content: center;
+}
+
+.accuer-ink-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--cream);
+  background-color: var(--ink);
+}
+
+.accuer-ink-panel::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(circle, color-mix(in oklab, var(--cream) 15%, transparent) 0.8px, transparent 1px);
+  background-position: center;
+  background-size: 8px 8px;
+  content: "";
+  mask-image: radial-gradient(ellipse at center, var(--ink) 22%, transparent 82%);
+  pointer-events: none;
+}
+
+.accuer-hero-art-panel {
+  position: absolute;
+  inset: 32px 0 14px 46px;
+  border-radius: 30px;
+}
+
+.accuer-hero-art-note {
+  position: absolute;
+  right: 28px;
+  bottom: 34px;
+  color: color-mix(in oklab, var(--cream) 67%, transparent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.64rem;
+}
+
+.accuer-glass-stack {
+  position: relative;
+  z-index: 1;
+  width: min(88%, 410px);
+  padding-bottom: 39px;
+  transform: translate(-7px, -8px) rotate(-1.4deg);
+  transition: transform 260ms ease;
+}
+
+.accuer-glass-stack:hover {
+  transform: translate(-7px, -13px) rotate(-0.7deg);
+}
+
+.accuer-glass-shadow {
+  position: absolute;
+  right: 11px;
+  bottom: 24px;
+  left: 11px;
+  height: 81%;
+  border: 1px solid var(--hairline-light);
+  border-radius: 27px;
+  background: var(--panel-raised);
+  transform: rotate(4deg);
+}
+
+.accuer-glass-card {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  border: 1px solid var(--hairline-light);
+  border-radius: 27px;
+  color: var(--cream);
+  background: color-mix(in oklab, var(--secondary-ink) 85%, transparent);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(19px);
+  transition: transform 190ms ease, box-shadow 190ms ease;
+}
+
+.accuer-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.accuer-glass-card--cream {
+  border-color: color-mix(in oklab, var(--ink) 12%, transparent);
+  color: var(--ink);
+  background: var(--glass);
+  box-shadow: var(--shadow-card);
+}
+
+.accuer-peek {
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  padding: 17px 17px 7px;
+  gap: 11px;
+  border: 1px solid var(--hairline-light);
+  border-radius: 0 0 20px 20px;
+  color: color-mix(in oklab, var(--cream) 77%, transparent);
+  background: var(--panel-raised);
+  font-size: 0.75rem;
+}
+
+.accuer-peek--cream {
+  border-color: var(--hairline);
+  color: var(--secondary-ink);
+  background: var(--deep-cream);
+}
+
+.accuer-route-preview-card {
+  padding: 22px;
+}
+
+.accuer-ring {
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--cream);
+  --ring-fill: var(--cream);
+  --ring-rest: color-mix(in oklab, var(--cream) 18%, transparent);
+  background: conic-gradient(var(--ring-fill) var(--ring-value, 25%), var(--ring-rest) var(--ring-value, 25%));
+}
+
+.accuer-ring::before {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--secondary-ink);
+  content: "";
+}
+
+.accuer-ring--cream {
+  --ring-fill: var(--ink);
+  --ring-rest: color-mix(in oklab, var(--ink) 15%, transparent);
+  color: var(--ink);
+  background: conic-gradient(var(--ring-fill) var(--ring-value, 25%), var(--ring-rest) var(--ring-value, 25%));
+}
+
+.accuer-ring--cream::before {
+  background: var(--light-cream);
+}
+
+.accuer-ring__label {
+  position: relative;
+  z-index: 1;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  font-weight: 550;
+}
+
+.accuer-route-stage {
+  animation: stage-arrive 330ms ease both;
+}
+
+@keyframes stage-arrive {
+  from { opacity: 0.56; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.accuer-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 16px;
+  border: 1px solid var(--hairline);
+  border-radius: 15px;
+  color: var(--ink);
+  background: var(--light-cream);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.accuer-input::placeholder {
+  color: var(--muted-ink);
+  opacity: 0.82;
+}
+
+.accuer-input:focus {
+  border-color: var(--secondary-ink);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ink) 10%, transparent);
+}
+
+.accuer-form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.accuer-route-section {
+  padding-block: clamp(58px, 8vw, 92px);
+  border-radius: 34px;
+}
+
+.accuer-route-section::before {
+  background-position: 85% 25%;
+  mask-image: radial-gradient(ellipse at 78% 42%, var(--ink) 15%, transparent 68%);
+}
+
+.accuer-stage-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.accuer-hop-card,
+.accuer-feed-card {
+  min-width: 0;
+  border: 1px solid var(--hairline-light);
+  border-radius: 19px;
+  color: var(--cream);
+  background: var(--glass-dark);
+  transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.accuer-hop-card:hover,
+.accuer-feed-card:hover {
+  background: color-mix(in oklab, var(--cream) 12%, var(--ink));
+  transform: translateY(-2px);
+}
+
+.accuer-progress-track {
+  overflow: hidden;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--ink) 15%, var(--cream));
+}
+
+.accuer-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ink);
+  transition: width 500ms ease;
+}
+
+.accuer-timeline-card {
+  max-width: 555px;
+  transition: transform 210ms ease;
+}
+
+.accuer-timeline-card:hover {
+  transform: translateY(-3px);
+}
+
+.accuer-faq-item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.accuer-faq-item summary {
+  display: flex;
+  min-height: 69px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.97rem;
+  font-weight: 560;
+}
+
+.accuer-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accuer-faq-item summary svg {
+  flex: 0 0 auto;
+  color: var(--muted-ink);
+  transition: transform 180ms ease;
+}
+
+.accuer-faq-item[open] summary svg {
+  transform: rotate(45deg);
+}
+
+.accuer-faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms ease;
+}
+
+.accuer-faq-item[open] .accuer-faq-content {
+  grid-template-rows: 1fr;
+}
+
+.accuer-faq-answer {
+  overflow: hidden;
+  max-width: 700px;
+  padding: 0 35px 22px 0;
+  color: var(--secondary-ink);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.accuer-community-header {
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 28px;
+  color: var(--ink);
+  background: linear-gradient(116deg, var(--sage-light) 0%, var(--cream) 55%, var(--deep-cream) 100%);
+}
+
+.accuer-avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--light-cream);
+  border-radius: 50%;
+  background: var(--avatar-bg, var(--sage));
+}
+
+.accuer-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.accuer-avatar-stack .accuer-avatar + .accuer-avatar {
+  margin-left: -12px;
+}
+
+.accuer-avatar--one .accuer-avatar-mark {
+  width: 13px; height: 13px; border: 2px solid var(--avatar-ink, var(--ink)); border-radius: 3px; transform: rotate(45deg);
+}
+
+.accuer-avatar--two .accuer-avatar-mark {
+  width: 16px; height: 16px; border: 2px solid var(--avatar-ink, var(--ink)); border-radius: 50% 50% 4px 50%; transform: rotate(45deg);
+}
+
+.accuer-avatar--three .accuer-avatar-mark {
+  width: 13px; height: 13px; border: 2px solid var(--avatar-ink, var(--ink)); border-radius: 50%; box-shadow: 0 0 0 4px color-mix(in oklab, var(--avatar-ink, var(--ink)) 18%, transparent);
+}
+
+.accuer-avatar--four .accuer-avatar-mark {
+  width: 12px; height: 15px; border: 2px solid var(--avatar-ink, var(--ink)); border-radius: 3px 50% 3px 50%; transform: rotate(-35deg);
+}
+
+.accuer-avatar--five .accuer-avatar-mark {
+  width: 15px; height: 15px; border: 2px solid var(--avatar-ink, var(--ink)); border-radius: 50% 4px 50% 4px; transform: rotate(45deg);
+}
+
+.accuer-avatar-tone-0 { --avatar-bg: var(--cream); --avatar-ink: var(--ink); }
+.accuer-avatar-tone-1 { --avatar-bg: var(--deep-cream); --avatar-ink: var(--secondary-ink); }
+.accuer-avatar-tone-2 { --avatar-bg: var(--sage); --avatar-ink: var(--ink); }
+.accuer-avatar-tone-3 { --avatar-bg: var(--light-cream); --avatar-ink: var(--muted-ink); }
+.accuer-avatar-tone-4 { --avatar-bg: var(--secondary-ink); --avatar-ink: var(--cream); }
+
+.accuer-pledge-status {
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--secondary-ink);
+  background: var(--deep-cream);
+}
+
+.accuer-pledge-status--selected {
+  border-color: var(--ink);
+  color: var(--cream);
+  background: var(--ink);
+}
+
+.accuer-footer {
+  border-radius: 32px 32px 0 0;
+}
+
+.accuer-unlocked {
+  animation: unlock-settle 420ms ease both;
+}
+
+@keyframes unlock-settle {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 1500px) {
+  .accuer-hero-title { font-size: 5.7rem; }
+}
+
+@media (max-width: 780px) {
+  .accuer-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 27px; }
+  .accuer-hero { padding-top: 58px; }
+  .accuer-hero-title { max-width: 660px; font-size: clamp(3.05rem, 9.2vw, 4.5rem); }
+  .accuer-hero-art { min-height: 360px; }
+  .accuer-hero-art-panel { inset: 12px 0 9px 15px; }
+  .accuer-glass-stack { width: min(89%, 390px); }
+  .accuer-stage-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .accuer-container { width: calc(100% - 30px); }
+  .accuer-nav-link { font-size: 0.73rem; }
+  .accuer-wordmark { font-size: 1.22rem; }
+  .accuer-nav .accuer-pill-button { min-height: 40px; padding-inline: 15px; font-size: 0.76rem; }
+  .accuer-hero-title { font-size: clamp(2.75rem, 11.1vw, 3.55rem); }
+  .accuer-hero-copy { font-size: 0.94rem; }
+  .accuer-hero-art { min-height: 335px; }
+  .accuer-glass-card { padding: 19px; }
+  .accuer-route-preview-card { padding: 19px; }
+  .accuer-route-section { border-radius: 25px; }
+  .accuer-community-header { border-radius: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

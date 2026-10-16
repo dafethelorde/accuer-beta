@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep product configuration and browser-only domain logic in focused typed modules, and centralize the page's colors and presentation tokens in `src/styles.css`, so preview integrations remain safe to replace and consistent to maintain.
